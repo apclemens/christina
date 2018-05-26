@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<h2>Social Design</h2>
+{% for artwork in site.artwork %}
+{% if artwork.layout=='social' %}
+{% include projectimg.html content=artwork %}
+{% endif %}
+{% endfor %}
+
+
+<h2>Graphic Design</h2>
+{% for artwork in site.artwork %}
+{% if artwork.layout=='graphic' %}
+{% include projectimg.html content=artwork %}
+{% endif %}
+{% endfor %}
+
