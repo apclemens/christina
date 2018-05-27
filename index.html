@@ -3,7 +3,7 @@ layout: default
 frontpage: true
 ---
 
-<h3>Social Design</h3>
+<h2>Social Design</h2>
 {% for artwork in site.artwork %}
 {% if artwork.layout=='social' %}
 {% include projectimg.html content=artwork %}
@@ -11,7 +11,7 @@ frontpage: true
 {% endfor %}
 
 
-<h3>Graphic Design</h3>
+<h2>Graphic Design</h2>
 {% for artwork in site.artwork %}
 {% if artwork.layout=='graphic' %}
 {% include projectimg.html content=artwork %}
