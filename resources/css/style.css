@@ -57,7 +57,7 @@ h2 {
   display: inline-block;
   background-size: 50%;
   background-repeat: no-repeat;
-  height: 250px;
+  height: calc(50vw - 20px);
   width: 100%;
 }
 
