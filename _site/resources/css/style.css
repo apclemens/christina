@@ -10,17 +10,17 @@ header {
 }
 header #title {
     position: absolute;
-    left: 50px;
+    left: 0;
 }
 header #link {
     position: absolute;
-    right: 50px;
+    right: 0;
     top: 0;
 }
 
 /* content */
 #content {
-    padding: 100px;
+    padding: 20px;
     padding-top: 70px;
 }
 h2 {
@@ -73,6 +73,24 @@ h2 {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+
+header {
+}
+header #title {
+    left: 50px;
+}
+header #link {
+    right: 50px;
+}
+
+/* content */
+#content {
+    padding: 100px;
+}
+h2 {
+    border-bottom: 2px solid black;
+}
+
 
 
 /* front images */
