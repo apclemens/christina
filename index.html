@@ -4,17 +4,20 @@ frontpage: true
 ---
 
 <h2>Social Design</h2>
+<div class="front__wrap" id="social__wrap">
 {% for artwork in site.artwork %}
 {% if artwork.layout=='social' %}
 {% include projectimg.html content=artwork %}
 {% endif %}
 {% endfor %}
+</div>
 
 
 <h2>Graphic Design</h2>
+<div class="front__wrap" id="graphic__wrap">
 {% for artwork in site.artwork %}
 {% if artwork.layout=='graphic' %}
 {% include projectimg.html content=artwork %}
 {% endif %}
 {% endfor %}
-
+</div>

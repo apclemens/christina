@@ -33,10 +33,9 @@ h2 {
   cursor: pointer;
   position: relative;
   display: inline-block;
-}
-
-.img__wrap img {
-  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+  margin: 8px;
 }
 
 .img__description_layer {
@@ -69,4 +68,25 @@ h2 {
 
 .img__wrap:hover .img__description {
   transform: translateY(0);
+}
+
+.front__wrap {
+    display: grid;
+    width: 100%;
+}
+
+#social__wrap {
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 50% 50%;
+    height: 750px;
+    grid-template-areas: "a b c"
+                         "d b e";
+}
+
+#graphic__wrap {
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 50% 50%;
+    height: 750px;
+    grid-template-areas: "a a c"
+                         "d b e";
 }
