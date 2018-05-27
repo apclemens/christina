@@ -29,13 +29,80 @@ h2 {
 
 
 /* front images */
+
+.front__wrap {
+    width: 100%;
+}
+
+.front__wrap a:nth-of-type(2n) {
+  background-position: left;
+}
+
+.front__wrap a:nth-of-type(2n+1) {
+  background-position: right;
+}
+
+.front__wrap a:nth-of-type(2n) .img__description_layer {
+  float: right;
+}
+
+.front__wrap a:nth-of-type(2n+1) .img__description_layer {
+  float: left;
+}
+
 .img__wrap {
   cursor: pointer;
   position: relative;
   display: inline-block;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+}
+
+.img__description_layer {
+  width: 50%;
+  height: 100%;
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+
+/* front images */
+
+.front__wrap {
+    display: grid;
+}
+
+#graphic__wrap {
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 50% 50%;
+    height: 750px;
+    grid-template-areas: "a a c"
+                         "d b e";
+}
+
+#social__wrap {
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 50% 50%;
+    height: 750px;
+    grid-template-areas: "a b c"
+                         "d b e";
+}
+
+.img__wrap {
   background-size: cover;
-  background-position: center;
+  background-position: center !important;
   margin: 8px;
+  height: auto;
+  width: auto;
 }
 
 .img__description_layer {
@@ -44,13 +111,9 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,.4);
-  color: #fff;
   visibility: hidden;
   opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
 
   /* transition effect. not necessary */
   transition: opacity .2s, visibility .2s;
@@ -69,24 +132,4 @@ h2 {
 .img__wrap:hover .img__description {
   transform: translateY(0);
 }
-
-.front__wrap {
-    display: grid;
-    width: 100%;
-}
-
-#social__wrap {
-    grid-template-columns: 33% 34% 33%;
-    grid-template-rows: 50% 50%;
-    height: 750px;
-    grid-template-areas: "a b c"
-                         "d b e";
-}
-
-#graphic__wrap {
-    grid-template-columns: 33% 34% 33%;
-    grid-template-rows: 50% 50%;
-    height: 750px;
-    grid-template-areas: "a a c"
-                         "d b e";
 }
