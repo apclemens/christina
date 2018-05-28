@@ -20,6 +20,9 @@ header {
         position: absolute;
         right: 0;
         top: 0;
+        a {
+            color: black;
+        }
         @media screen and (min-width: $break-large) {
             right: 50px;
         }
