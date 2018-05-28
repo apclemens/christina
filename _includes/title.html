@@ -1,1 +1,5 @@
-title
+{% if page.frontpage %}
+{{ site.title }}
+{% else %}
+{{page.title}} - {{site.title}}
+{% endif %}
