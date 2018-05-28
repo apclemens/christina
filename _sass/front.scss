@@ -28,6 +28,7 @@
   background-size: 50%;
   background-repeat: no-repeat;
   height: calc(50vw - 20px);
+  transition: opacity .5s, transform .5s;
   width: 100%;
     @media screen and (min-width: $break-large) {
       background-size: cover;
@@ -36,6 +37,27 @@
       height: auto;
       width: auto;
     }
+}
+/*
+.img__left {
+    transform: translate(-100px, 0);
+}
+.img__right {
+    transform: translate(100px, 0);
+}
+.img__top {
+    transform: translate(0, -100px);
+}
+.img__bottom {
+    transform: translate(0, 100px);
+}
+*/
+.lazyload {
+    opacity: 0;
+}
+.loaded {
+   transform: none;
+   opacity: 1;
 }
 
 .img__description_layer {

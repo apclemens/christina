@@ -72,3 +72,4 @@ window.history.pushState({
     linkText: window.location.pathname == '/' ? 'CV' : "HOME",
 }, "", document.location.href);
 setAllLinks();
+
