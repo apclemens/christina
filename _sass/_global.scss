@@ -1,0 +1,140 @@
+$break-large: 992px;
+
+/* header */
+header {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    height: 70px;
+}
+header #title {
+    position: absolute;
+    left: 0;
+    @media screen and (min-width: $break-large) {
+        left: 50px;
+    }
+}
+header #link {
+    position: absolute;
+    right: 0;
+    top: 0;
+    @media screen and (min-width: $break-large) {
+        right: 50px;
+    }
+}
+
+/* content */
+#content {
+    padding: 20px;
+    @media screen and (min-width: $break-large) {
+        padding: 100px;
+    }
+    padding-top: 70px;
+    transition: opacity .25s;
+}
+h2 {
+    border-bottom: 2px solid black;
+}
+
+
+/* front images */
+
+.front__wrap {
+    width: 100%;
+    @media screen and (min-width: $break-large) {
+        display: grid;
+    }
+}
+
+.front__wrap a:nth-of-type(2n) {
+  background-position: left;
+}
+
+.front__wrap a:nth-of-type(2n+1) {
+  background-position: right;
+}
+
+.front__wrap a:nth-of-type(2n) .img__description_layer {
+  float: right;
+}
+
+.front__wrap a:nth-of-type(2n+1) .img__description_layer {
+  float: left;
+}
+
+.img__wrap {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  height: calc(50vw - 20px);
+  width: 100%;
+    @media screen and (min-width: $break-large) {
+      background-size: cover;
+      background-position: center !important;
+      margin: 8px;
+      height: auto;
+      width: auto;
+    }
+}
+
+.img__description_layer {
+  width: 50%;
+  height: 100%;
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    @media screen and (min-width: $break-large) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      visibility: hidden;
+      opacity: 0;
+      width: 100%;
+      transition: opacity .2s, visibility .2s;
+    }
+}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: $break-large) {
+
+#graphic__wrap {
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 50% 50%;
+    height: 750px;
+    grid-template-areas: "a a c"
+                         "d b e";
+}
+
+#social__wrap {
+    grid-template-columns: 33% 34% 33%;
+    grid-template-rows: 50% 50%;
+    height: 750px;
+    grid-template-areas: "a b c"
+                         "d b e";
+}
+
+.img__wrap:hover .img__description_layer {
+  visibility: visible;
+  opacity: 1;
+}
+
+.img__description {
+  transition: .2s;
+  transform: translateY(1em);
+}
+
+.img__wrap:hover .img__description {
+  transform: translateY(0);
+}
+
+}
