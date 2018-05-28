@@ -11,14 +11,14 @@ header {
     height: 70px;
     #title {
         position: absolute;
-        left: 0;
+        left: 10px;
         @media screen and (min-width: $break-large) {
             left: 50px;
         }
     }
     #link {
         position: absolute;
-        right: 0;
+        right: 10px;
         top: 0;
         a {
             color: black;
