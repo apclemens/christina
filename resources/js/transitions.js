@@ -50,7 +50,6 @@ function setAllLinks() {
 }
 
 window.onpopstate = function(event) {
-    console.log(event);
     if (event.state) {
         document.getElementById('content').style.opacity = 0;
         setTimeout(function() {
