@@ -1,8 +1,7 @@
 title: Christina Yoo
-canonical_url: https://dahye.andrewclemens.com
 
 sass:
-    style: compressed
+    style: compact
 
 collections:
     artwork:
