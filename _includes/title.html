@@ -1,5 +1,5 @@
 {% if page.frontpage %}
 {{ site.title }}
 {% else %}
-{{page.title}} - {{site.title}}
+{{page.title | replace: '&#58;', ':'}} - {{site.title}}
 {% endif %}
