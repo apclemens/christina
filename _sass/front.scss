@@ -25,7 +25,7 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  background-size: 50%;
+  background-size: contain;
   background-color: #404040;
   background-repeat: no-repeat;
   height: calc(50vw - 20px);
@@ -67,6 +67,7 @@
   color: #fff;
   display: flex;
   align-items: center;
+  background-color: #404040;
   justify-content: center;
     @media screen and (min-width: $break-large) {
       position: absolute;
