@@ -95,7 +95,7 @@
 #graphic__wrap {
     grid-template-columns: 33% 34% 33%;
     grid-template-rows: 50% 50%;
-    height: 750px;
+    height: calc(46vw - 101px);
     grid-template-areas: "a a c"
                          "d b e";
 }
@@ -103,7 +103,7 @@
 #social__wrap {
     grid-template-columns: 33% 34% 33%;
     grid-template-rows: 50% 50%;
-    height: 750px;
+    height: calc(46vw - 101px);
     grid-template-areas: "a b c"
                          "d b e";
 }
