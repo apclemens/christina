@@ -123,5 +123,22 @@
   transform: translateY(1em);
 }
 
+@media (hover: none) {
+    .img__description_layer {
+        visibility: visible;
+        opacity: 1;
+        background: none;
+    }
+    .img__description {
+        transform: none;
+        background-color: black;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 10px 0;
+    }
+}
+
 
 }
