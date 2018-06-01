@@ -17,6 +17,42 @@ function httpGetAsync(theUrl, pathname, callback)
     xmlHttp.send(null);
 }
 
+  function insertAndExecute(id, text)
+  {
+    domelement = document.getElementById(id);
+    domelement.innerHTML = text;
+    var scripts = [];
+
+    ret = domelement.querySelector('.script_wrap').childNodes;
+    for ( var i = 0; ret[i]; i++ ) {
+      if ( scripts && nodeName( ret[i], "script" ) && (!ret[i].type || ret[i].type.toLowerCase() === "text/javascript") ) {
+            scripts.push( ret[i].parentNode ? ret[i].parentNode.removeChild( ret[i] ) : ret[i] );
+        }
+    }
+
+    for(script in scripts)
+    {
+      evalScript(scripts[script]);
+    }
+  }
+  function nodeName( elem, name ) {
+    return elem.nodeName && elem.nodeName.toUpperCase() === name.toUpperCase();
+  }
+  function evalScript( elem ) {
+      data = elem.src;
+
+    var head = document.getElementsByTagName("head")[0] || document.documentElement,
+    script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = data;
+    head.insertBefore( script, head.firstChild );
+    head.removeChild( script );
+
+    if ( elem.parentNode ) {
+        elem.parentNode.removeChild( elem );
+    }
+  }
+
 function setAllLinks() {
     lazyload();
     var links = document.getElementsByTagName('a');
@@ -35,7 +71,7 @@ function setAllLinks() {
                         title: title,
                         linkText: pathname == '/' ? 'CV' : "HOME",
                     }, "", href)
-                    document.getElementById('content').innerHTML = innerHTML;
+                    insertAndExecute('content', innerHTML);
                     document.title = title;
                     if (pathname == '/') {
                         document.getElementById('link').innerHTML = '<a href="/cv">CV</a>';
