@@ -230,4 +230,7 @@ table {
 
 #citations {
     font-size: 75%;
+    @media screen and (min-width: $break-large) {
+        font-size: 100%;
+    }
 }
