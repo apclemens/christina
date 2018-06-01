@@ -66,13 +66,13 @@ function setScrollMagic() {
         duration: document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_images').offsetHeight})
     .setPin('#chapter_4_images')
     .addTo(controller);
-
+/*
     new ScrollMagic.Scene({
         triggerElement: '#chapter_4_prototype_img',
         duration: document.getElementById('chapter_4_prototype').offsetHeight - document.getElementById('chapter_4_prototype_img').offsetHeight})
     .setPin('#chapter_4_prototype_img')
     .addTo(controller);
-
+*/
     for(var i=0; i<chapters.length; i++) {
         var ch = chapters[i];
         chapter_heights[ch.id] = Math.max(0, document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop - 5);
