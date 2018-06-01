@@ -1,24 +1,30 @@
 #container {
     display: grid;
     height: 100%;
-    grid-template: 50% 50% / 25% auto;
-    grid-template-areas: "about viewer"
-                         "toc   viewer";
-    grid-gap: 10px 10px;
+    grid-template: 20% 70% / 100%;
+    grid-template-areas: 
+                         "toc"
+                         "viewer";
+    @media screen and (min-width: $break-large) {
+        grid-template: 50% 50% / 25% auto;
+        grid-template-areas: "about viewer"
+                             "toc   viewer";
+        grid-gap: 10px 10px;
+    }
 }
 
 .font1 {
-font-family: "Playfair Display", serif;
-font-weight: 400;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
 }
 .font2 {
-font-family: "Playfair Display", serif;
-font-weight: 700;
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
 }
 .font3 {
-font-family:"Libre Baskerville", serif;
-font-weight: 400;
-font-style: italic;
+    font-family:"Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
 p, table {
@@ -42,13 +48,26 @@ p, table {
 }
 
 .toc_title {
-    font-weight: 700;
-    text-align: center;
+    display: none;
+    @media screen and (min-width: $break-large) {
+        display: block;
+        font-weight: 700;
+        text-align: center;
+    }
 }
 
 #toc li, #toc ul, #toc ul li{
     list-style: outside none none !important;
     padding: 0;
+    @media screen and (max-width: $break-large) {
+        display: inline;
+        &:after {
+            content: ' /';
+        }
+        &:last-child:after {
+            content: '';
+        }
+    }
 }
 
 #viewer {
@@ -67,7 +86,10 @@ p, table {
     left: 50%;
     width: 50%;
     height: 100%;
-    font-size: calc(8.5vh - 18px);
+    font-size: calc(6.5vh - 18px);
+    @media screen and (min-width: $break-large) {
+        font-size: calc(8.5vh - 18px);
+    }
 }
 
 .chapter_heading {
@@ -77,15 +99,23 @@ p, table {
     width: 100%;
     height: 100%;
     img {
-        width: 50%;
-        top: 50%;
+        width: 100%;
+        top: 0;
         position: relative;
-        transform: translateY(-50%);
+        @media screen and (min-width: $break-large) {
+            width: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     }
     table {
-        width: 50%;
+        width: 100%;
         float: right;
-        font-size: 75%;
+        font-size: 50%;
+        @media screen and (min-width: $break-large) {
+            width: 50%;
+            font-size: 75%;
+        }
         th {
             vertical-align: top;
             text-align: left;
