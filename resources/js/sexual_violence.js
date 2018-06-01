@@ -1,6 +1,9 @@
 ---
 ---
 
+var chapter_heights = {}
+var chapters = document.getElementsByClassName('scroll_to');
+
 var content_links = document.getElementsByClassName('scroll_to');
 for (var i=0; i<content_links.length; i++) {
     content_links[i].addEventListener('click', function(event){
@@ -10,12 +13,29 @@ for (var i=0; i<content_links.length; i++) {
         setTimeout(function(){window.location.hash = hash;}, 750);
     });
 }
-var active_bio = 'sam';
+function get_active_chapter(scrollTop) {
+    var kys = Object.keys(chapter_heights);
+    kys.sort(function(a,b){
+        var A = chapter_heights[a] > scrollTop ? -1 : chapter_heights[a];
+        var B = chapter_heights[b] > scrollTop ? -1 : chapter_heights[b];
+        return B-A;
+    })
+    return kys[0];
+}
 
-document.getElementById('viewer').addEventListener('scroll', function(){
+var active_bio = 'sam';
+var active_chapter = 'link_top';
+document.getElementById('viewer').addEventListener('scroll', function(event){
+    setScrollMagic();
+    var this_chapter = get_active_chapter(this.scrollTop);
+    if (this_chapter != active_chapter) {
+        // gotta change chapters
+        document.getElementById(active_chapter).classList.remove('active');
+        active_chapter = this_chapter;
+        document.getElementById(active_chapter).classList.add('active');
+    }
     var center_right = element_in_center_right();
     if (center_right.classList.contains('chapter_4_bio')) {
-        setScrollMagic();
         var this_bio = center_right.id.replace('chapter_4_', '');
         if (this_bio != active_bio) {
             // gotta change bios
@@ -36,6 +56,7 @@ function element_in_center_right() {
 var scrollMagicSet = false;
 function setScrollMagic() {
     if (scrollMagicSet) return;
+
     scrollMagicSet = true;
     var controller = new ScrollMagic.Controller();
     console.log(document.getElementById('chapter_4_images').offsetHeight);
@@ -51,4 +72,9 @@ function setScrollMagic() {
         duration: document.getElementById('chapter_4_prototype').offsetHeight - document.getElementById('chapter_4_prototype_img').offsetHeight})
     .setPin('#chapter_4_prototype_img')
     .addTo(controller);
+
+    for(var i=0; i<chapters.length; i++) {
+        var ch = chapters[i];
+        chapter_heights[ch.id] = document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop - 2;
+    }
 }
