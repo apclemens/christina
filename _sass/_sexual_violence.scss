@@ -28,7 +28,7 @@
 }
 
 p, table {
-    font-family: "Source Sans Pro" sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -217,20 +217,45 @@ table {
 
 #chapter_3_table {
     width: 100%;
-    .insight {
-        font-family: "Playfair Display", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 210%;
-    }
     img {
         width: 100%;
     }
+}
+
+.insight {
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 210%;
 }
 
 #citations {
     font-size: 75%;
     @media screen and (min-width: $break-large) {
         font-size: 100%;
+    }
+}
+
+#chapter_1_table_1 {
+    width: 50%;
+    margin: auto;
+}
+
+.citation {
+    font-style: italic;
+    font-size: 60%;
+    bottom: 0;
+    position: absolute;
+    border-top: 1px solid grey;
+}
+
+#chapter_1_table_2 {
+    width: 50%;
+    margin: auto;
+    img {
+        width: 100%;
+    }
+    .stat {
+        font-size: 300%;
     }
 }
