@@ -256,6 +256,9 @@ table {
         width: 100%;
     }
     .stat {
-        font-size: 300%;
+        font-size: 150%;
+        @media screen and (min-width: $break-large) {
+            font-size: 300%;
+        }
     }
 }
