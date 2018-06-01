@@ -15,6 +15,7 @@ var active_bio = 'sam';
 document.getElementById('viewer').addEventListener('scroll', function(){
     var center_right = element_in_center_right();
     if (center_right.classList.contains('chapter_4_bio')) {
+        setScrollMagic();
         var this_bio = center_right.id.replace('chapter_4_', '');
         if (this_bio != active_bio) {
             // gotta change bios
@@ -32,8 +33,12 @@ function element_in_center_right() {
                                      elem.offsetTop + elem.offsetHeight/2);
 }
 
-window.onload = function() {
+var scrollMagicSet = false;
+function setScrollMagic() {
+    if (scrollMagicSet) return;
+    scrollMagicSet = true;
     var controller = new ScrollMagic.Controller();
+    console.log(document.getElementById('chapter_4_images').offsetHeight);
 
     new ScrollMagic.Scene({
         triggerElement: '#chapter_4_images',

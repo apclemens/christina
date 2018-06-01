@@ -168,3 +168,17 @@ table {
     border-bottom: none;
 }
 .scrollmagic-pin-spacer {float: left;}
+
+
+#chapter_3_table {
+    width: 100%;
+    .insight {
+        font-family: "Playfair Display script=all rev=2", "Adobe Blank";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 350%;
+    }
+    img {
+        width: 100%;
+    }
+}
