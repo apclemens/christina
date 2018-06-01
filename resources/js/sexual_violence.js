@@ -10,7 +10,7 @@ for (var i=0; i<content_links.length; i++) {
         event.preventDefault();
         var hash = this.hash;
         document.getElementById(hash.replace('#','')).scrollIntoView({behavior: 'smooth'});
-        setTimeout(function(){window.location.hash = hash;}, 750);
+        history.pushState(null, null, hash);
     });
 }
 function get_active_chapter(scrollTop) {
@@ -75,6 +75,6 @@ function setScrollMagic() {
 
     for(var i=0; i<chapters.length; i++) {
         var ch = chapters[i];
-        chapter_heights[ch.id] = document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop - 2;
+        chapter_heights[ch.id] = document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop;
     }
 }
