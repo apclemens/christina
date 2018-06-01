@@ -32,10 +32,18 @@ function element_in_center_right() {
                                      elem.offsetTop + elem.offsetHeight/2);
 }
 
-var controller = new ScrollMagic.Controller();
+window.onload = function() {
+    var controller = new ScrollMagic.Controller();
 
-var scene = new ScrollMagic.Scene({
-    triggerElement: '#chapter_4_images',
-    duration: document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_image').offsetHeight})
-.setPin('#chapter_4_images')
-.addTo(controller);
+    new ScrollMagic.Scene({
+        triggerElement: '#chapter_4_images',
+        duration: document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_images').offsetHeight})
+    .setPin('#chapter_4_images')
+    .addTo(controller);
+
+    new ScrollMagic.Scene({
+        triggerElement: '#chapter_4_prototype_img',
+        duration: document.getElementById('chapter_4_prototype').offsetHeight - document.getElementById('chapter_4_prototype_img').offsetHeight})
+    .setPin('#chapter_4_prototype_img')
+    .addTo(controller);
+}

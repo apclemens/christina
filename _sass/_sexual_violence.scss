@@ -104,6 +104,10 @@ table {
     }
 }
 
+.section_header_wrapper {
+    text-align: center;
+    padding: 10px;
+}
 .section_header {
     background-color: #C5161C;
     font-weight: 800;
@@ -133,17 +137,29 @@ table {
 #chapter_4_images {
     width: 50%;
     float: left;
-    position: sticky;
-    top: 0;
+}
+#chapter_4_prototype_img {
+    width: 50%;
+    float: left;
+    img {width: 100%;}
+}
+#chapter_4_prototype {
+    width: 50%;
+    float: right;
+    table {
+        max-width: 500px;
+    }
 }
 #chapter_4_image {
     left: 50%;
     position: relative;
     transform: translateX(-50%);
+    width: 50%;
 }
 .chapter_4_bio {
     color: grey;
     border-bottom: 2px dashed grey;
+    max-width: 500px;
 }
 .active_bio {
     color: black;
