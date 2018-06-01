@@ -40,7 +40,10 @@ p, table {
     display: table;
     font-size: 95%;
     margin-bottom: 1em;
-    padding: 20px;
+    padding: 5px;
+    @media screen and (min-width: $break-large) {
+        padding: 20px;
+    }
     width: auto;
     .active {
         color: green;
