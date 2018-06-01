@@ -5,7 +5,7 @@
     grid-template-areas: 
                          "toc"
                          "viewer";
-    @media (min-aspect-ratio: 1/1) {
+    @media screen and (min-width: $break-large) {
         grid-template: 50% 50% / 25% auto;
         grid-template-areas: "about viewer"
                              "toc   viewer";
@@ -41,7 +41,7 @@ p, table {
     font-size: 95%;
     margin-bottom: 1em;
     padding: 5px;
-    @media (min-aspect-ratio: 1/1) {
+    @media screen and (min-width: $break-large) {
         padding: 20px;
     }
     width: auto;
@@ -52,7 +52,7 @@ p, table {
 
 .toc_title {
     display: none;
-    @media (min-aspect-ratio: 1/1) {
+    @media screen and (min-width: $break-large) {
         display: block;
         font-weight: 700;
         text-align: center;
@@ -62,7 +62,7 @@ p, table {
 #toc li, #toc ul, #toc ul li{
     list-style: outside none none !important;
     padding: 0;
-    @media (max-aspect-ratio: 1/1) {
+    @media screen and (max-width: $break-large) {
         display: inline;
         &:after {
             content: ' /';
