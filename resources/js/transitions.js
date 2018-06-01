@@ -1,13 +1,4 @@
-function httpGet(theUrl)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
-}
-
-function httpGetAsync(theUrl, pathname, callback)
-{
+function httpGetAsync(theUrl, pathname, callback) {
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
@@ -17,8 +8,7 @@ function httpGetAsync(theUrl, pathname, callback)
     xmlHttp.send(null);
 }
 
-  function insertAndExecute(id, text)
-  {
+function insertAndExecute(id, text) {
     domelement = document.getElementById(id);
     domelement.innerHTML = text;
     var scripts = [];
@@ -34,12 +24,12 @@ function httpGetAsync(theUrl, pathname, callback)
     {
       evalScript(scripts[script]);
     }
-  }
-  function nodeName( elem, name ) {
+}
+function nodeName( elem, name ) {
     return elem.nodeName && elem.nodeName.toUpperCase() === name.toUpperCase();
-  }
-  function evalScript( elem ) {
-      data = elem.src;
+}
+function evalScript( elem ) {
+    data = elem.src;
 
     var head = document.getElementsByTagName("head")[0] || document.documentElement,
     script = document.createElement("script");
@@ -51,7 +41,7 @@ function httpGetAsync(theUrl, pathname, callback)
     if ( elem.parentNode ) {
         elem.parentNode.removeChild( elem );
     }
-  }
+}
 
 function setAllLinks() {
     lazyload();
