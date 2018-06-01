@@ -1,6 +1,11 @@
 ---
 ---
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville|Playfair+Display|Source+Sans+Pro');
 
 @import "global";
 @import "front";
-@import "sexual_violence";
+
+#sexual_violence {
+    height: calc(100vh - 188px);
+    @import "sexual_violence";
+}

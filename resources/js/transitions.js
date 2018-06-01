@@ -22,6 +22,7 @@ function setAllLinks() {
     var links = document.getElementsByTagName('a');
     for (var i=0; i<links.length; i++) {
         var link = links[i];
+        if (link.classList.contains('same_page')) continue;
         link.addEventListener('click', function(event) {
             event.preventDefault();
             httpGetAsync(this.href, this.pathname, function(href, pathname, html){
