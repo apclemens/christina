@@ -34,6 +34,7 @@ header {
     padding: 20px;
     @media screen and (min-width: $break-large) {
         padding: 100px;
+        padding-bottom: 0;
     }
     padding-top: 70px;
     transition: opacity .25s;
