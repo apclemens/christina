@@ -75,6 +75,6 @@ function setScrollMagic() {
 
     for(var i=0; i<chapters.length; i++) {
         var ch = chapters[i];
-        chapter_heights[ch.id] = max(0, document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop - 5);
+        chapter_heights[ch.id] = Math.max(0, document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop - 5);
     }
 }
