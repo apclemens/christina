@@ -173,13 +173,21 @@ table {
     float: left;
 }
 #chapter_4_prototype_img {
-    width: 50%;
-    float: left;
+    width: 100%;
+
+    @media screen and (min-width: $break-large) {
+        width: 50%;
+        float: left;
+    }
     img {width: 100%;}
 }
 #chapter_4_prototype {
-    width: 50%;
-    float: right;
+    width: 100%;
+
+    @media screen and (min-width: $break-large) {
+        width: 50%;
+        float: right;
+    }
     table {
         max-width: 500px;
     }
