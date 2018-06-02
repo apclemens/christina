@@ -54,13 +54,12 @@ function element_in_center_right() {
 }
 
 var scrollMagicSet = false;
+var controller = new ScrollMagic.Controller();
 window.onresize = function() {scrollMagicSet = false;}
 function setScrollMagic() {
     if (scrollMagicSet) return;
 
     scrollMagicSet = true;
-    var controller = new ScrollMagic.Controller();
-    console.log(document.getElementById('chapter_4_images').offsetHeight);
 
     new ScrollMagic.Scene({
         triggerElement: '#chapter_4_images',
