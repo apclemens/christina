@@ -186,6 +186,7 @@ table {
 }
 #chapter_4_prototype {
     width: 100%;
+    margin: auto;
 
     @media screen and (min-width: $break-large) {
         width: 50%;
