@@ -60,6 +60,9 @@ function setScrollMagic() {
     if (scrollMagicSet) return;
 
     scrollMagicSet = true;
+    
+    controller.destroy();
+    controller = new ScrollMagic.Controller();
 
     new ScrollMagic.Scene({
         triggerElement: '#chapter_4_images',
