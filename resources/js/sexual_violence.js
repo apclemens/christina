@@ -54,6 +54,7 @@ function element_in_center_right() {
 }
 
 var scrollMagicSet = false;
+window.onresize = function() {scrollMagicSet = false;}
 function setScrollMagic() {
     if (scrollMagicSet) return;
 
