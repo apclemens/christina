@@ -54,21 +54,23 @@ function element_in_center_right() {
 }
 
 var scrollMagicSet = false;
-var controller = new ScrollMagic.Controller();
+var scene;
 window.onresize = function() {scrollMagicSet = false;}
 function setScrollMagic() {
     if (scrollMagicSet) return;
 
     scrollMagicSet = true;
-    
-    controller.destroy();
+
     controller = new ScrollMagic.Controller();
 
-    new ScrollMagic.Scene({
+    try {
+        scene.remove();
+    } catch(error){}
+    scene = new ScrollMagic.Scene({
         triggerElement: '#chapter_4_images',
         duration: document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_images').offsetHeight})
-    .setPin('#chapter_4_images')
-    .addTo(controller);
+    .setPin('#chapter_4_images');
+    scene.addTo(controller);
 /*
     new ScrollMagic.Scene({
         triggerElement: '#chapter_4_prototype_img',
