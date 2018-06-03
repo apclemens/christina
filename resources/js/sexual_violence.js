@@ -60,9 +60,10 @@ function setScrollMagic() {
     if (scrollMagicSet) return;
     scrollMagicSet = true;
 
-    var scene = new ScrollMagic.Scene({
+    new ScrollMagic.Scene({
         triggerElement: '#chapter_4_images',
-        duration: function() {return document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_images').offsetHeight})}
+        duration: function() {return document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_images').offsetHeight},
+    })
     .setPin('#chapter_4_images')
     .addTo(controller);
 /*
