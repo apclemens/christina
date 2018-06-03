@@ -73,7 +73,7 @@ function setScrollMagic() {
     .setPin('#chapter_4_prototype_img')
     .addTo(controller);
 */
-
+    setChapterLengths();
 }
 
 function setChapterLengths() {
