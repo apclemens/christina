@@ -54,23 +54,17 @@ function element_in_center_right() {
 }
 
 var scrollMagicSet = false;
-var scene;
-window.onresize = function() {scrollMagicSet = false;}
+var controller = new ScrollMagic.Controller();
+window.onresize = function() {setChapterLengths();}
 function setScrollMagic() {
     if (scrollMagicSet) return;
-
     scrollMagicSet = true;
 
-    controller = new ScrollMagic.Controller();
-
-    try {
-        scene.remove();
-    } catch(error){}
-    scene = new ScrollMagic.Scene({
+    var scene = new ScrollMagic.Scene({
         triggerElement: '#chapter_4_images',
-        duration: document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_images').offsetHeight})
-    .setPin('#chapter_4_images');
-    scene.addTo(controller);
+        duration: function() {return document.getElementById('chapter_4_bios').offsetHeight - document.getElementById('chapter_4_images').offsetHeight})}
+    .setPin('#chapter_4_images')
+    .addTo(controller);
 /*
     new ScrollMagic.Scene({
         triggerElement: '#chapter_4_prototype_img',
@@ -78,6 +72,10 @@ function setScrollMagic() {
     .setPin('#chapter_4_prototype_img')
     .addTo(controller);
 */
+
+}
+
+function setChapterLengths() {
     for(var i=0; i<chapters.length; i++) {
         var ch = chapters[i];
         chapter_heights[ch.id] = Math.max(0, document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop - 5);
