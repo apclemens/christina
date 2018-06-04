@@ -25,6 +25,8 @@ function get_active_chapter(scrollTop) {
 
 var active_bio = 'sam';
 var active_chapter = 'link_top';
+var head_img = 'chapter_1_head_up';
+var head_height = 0;
 document.getElementById('viewer').addEventListener('scroll', function(event){
     setScrollMagic();
     var this_chapter = get_active_chapter(this.scrollTop);
@@ -33,6 +35,19 @@ document.getElementById('viewer').addEventListener('scroll', function(event){
         document.getElementById(active_chapter).classList.remove('active');
         active_chapter = this_chapter;
         document.getElementById(active_chapter).classList.add('active');
+    }
+    if (this.scrollTop > head_height) {
+        if (head_img == 'chapter_1_head_up') {
+            head_img = 'chapter_1_head_down';
+            document.querySelector('#chapter_1_head').src="{{ site.assets_url }}/artwork/sexual_violence/"+head_img+".png";
+            setChapterLengths();
+        }
+    } else {
+        if (head_img == 'chapter_1_head_down') {
+            head_img = 'chapter_1_head_up';
+            document.querySelector('#chapter_1_head').src="{{ site.assets_url }}/artwork/sexual_violence/"+head_img+".png";
+            setChapterLengths();
+        }
     }
     var center_right = element_in_center_right();
     if (center_right.classList.contains('chapter_4_bio')) {
@@ -81,4 +96,5 @@ function setChapterLengths() {
         var ch = chapters[i];
         chapter_heights[ch.id] = Math.max(0, document.querySelector(ch.hash).offsetTop - document.getElementById('viewer').offsetTop - 5);
     }
+    head_height = document.querySelector('#chapter_1_head').offsetTop - document.querySelector('#chapter_1_head').offsetHeight/2 - document.getElementById('viewer').offsetTop;
 }
