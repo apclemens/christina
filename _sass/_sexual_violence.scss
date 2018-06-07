@@ -27,7 +27,7 @@
     font-style: italic;
 }
 
-p, table {
+div, p, table {
     font-family: "Source Sans Pro", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -280,5 +280,18 @@ table {
         padding-left: 20px;
         list-style: unset;
         margin: 0;
+    }
+}
+
+#chapter_2_table_2 {
+    width: 50%;
+    margin: auto;
+    .font3 {
+        font-size: 350%;
+        padding-bottom: 10px;
+        .said {
+            font-size: 28.6%;
+            float: right;
+        }
     }
 }
