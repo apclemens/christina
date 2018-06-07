@@ -269,3 +269,16 @@ table {
     margin: auto;
     display: block;
 }
+
+#chapter_2_table_1 {
+    width: 50%;
+    margin: auto;
+    div {
+        padding-top: 15px;
+    }
+    ul {
+        padding-left: 20px;
+        list-style: unset;
+        margin: 0;
+    }
+}
