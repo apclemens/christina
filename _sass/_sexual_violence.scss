@@ -46,10 +46,15 @@ div, p, table {
     }
     width: auto;
     .active {
-        color: green;
+        color: white;
+        background-color: black;
     }
     a {
         color: black;
+        display: inline-block;
+        @media screen and (min-width: $break-large) {
+            display: block;
+        }
     }
 }
 
